@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Main {
+int product_code,pack_size,product_price;
+String pack_type,flavour;
+
+Main()
+{
+	product_code=0;
+	product_price=0;
+	pack_size=0;
+	pack_type="";
+	flavour="";
+}
+
+void input()
+{
+	System.out.println("Enter Input");
+ Scanner sc = new Scanner(System.in);
+ 
+ product_code=sc.nextInt();
+ pack_size=sc.nextInt();
+ product_price=sc.nextInt();
+ 
+ Scanner sc2 = new Scanner(System.in);
+ pack_type=sc2.nextLine();
+ flavour=sc2.nextLine();
+}
+
+void discount()
+{
+	product_price=product_price-10;
+}
+void display()
+{
+	System.out.println("Product_code "+product_code);
+	System.out.println("Pack size "+pack_size);
+	System.out.println("product price "+product_price);
+	System.out.println("Pack type "+pack_type);
+	System.out.println("flavour "+flavour);
+	
+	}
+ 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Main FJ = new Main();
+		FJ.input();
+		FJ.discount();
+		FJ.display();
+
+	}
+
+}
