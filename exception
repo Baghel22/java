@@ -1,0 +1,54 @@
+package exception;
+
+class exc {
+	int a,b;
+	int x[];
+
+exc ()
+{
+	a=b=0;
+	x=new int [20];
+}
+exc(int a,int b) {
+	this.a=a;
+	this.b=b;
+	x=new int [20];
+}
+void func()
+{
+	try {
+		int i=0;
+		for(i=0;i<=19;i++,b--)
+			x[i]=i+1;
+		
+		try {
+			for(i=0;i<=19;i++,b--) {
+				System.out.println(x[i]/b);
+			}
+	}
+	catch(ArithmeticException e) {
+		System.out.println(e.toString());
+	}
+	}
+	catch (ArrayIndexOutOfBoundsException e) {
+		System.out.println(e.toString());
+		
+	}
+	
+	}
+}
+
+public class Exception {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		exc ob1=new exc(25,30);
+		exc ob2=new exc(20,20);
+		exc ob3=new exc();
+		
+		ob1.func();
+		ob2.func();
+		ob3.func();
+	}
+
+}
