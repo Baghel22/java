@@ -1,0 +1,54 @@
+package oops;
+
+class Nt extends Thread {
+	
+	Thread t;
+	 Nt(String Name)
+	 {
+		 t=new Thread (Name); 
+	 }
+
+public void run()
+{
+	try {
+		for(int i=5;i>0;i--)
+		{
+			System.out.println("child thread"+ i);
+			Thread.sleep(500);
+			
+		}
+	
+	
+}
+	catch (InterruptedException e)
+	{
+		System.out.println(e);
+	}
+}
+
+}
+
+public class MultiThreadDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+  Nt nob=new Nt("Thread 1");
+  nob.t. start();
+  
+  try {
+	  for(int i=5;i>0;i--)
+		 
+	  {
+  System.out.println("MainThread"+i);
+  Thread.sleep(1000);
+	}
+}
+
+ catch (InterruptedException e)
+ {
+	 System.out.println(e);
+ 
+	}
+   }
+ }
+
