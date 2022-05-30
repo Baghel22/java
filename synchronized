@@ -1,0 +1,47 @@
+package oops;
+
+class Tsync
+{
+	synchronized void pt(int n)
+	{
+		for (int i=1;i<=n;i++)
+		{
+			System.out.println(Thread.currentThread()+" "+ n*i);
+		}
+	}
+	
+	class Nt extends Thread
+	{
+		Tsync t;
+		int n;
+		Nt ( int n,Tsync t,String name)
+		{
+			super (name);
+			this.t=t;
+			this.n=n;
+		}
+	}
+	
+	
+	public void run()
+	{
+		t.pt(n);
+	}
+}
+
+public class DemoThread {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Tsync t =new Tsync();
+		
+		Nt ob1 = new Nt (5,t,"Thread1");
+        Nt ob2 = new Nt (10,t,"Thread2");
+        
+        ob1.start();
+        ob2.start();
+        System.out.println(ob1.isAlive());
+	}
+
+}
